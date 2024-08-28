@@ -19,9 +19,10 @@ const Navbar = () => {
         { name: 'Blogs', path: '/' },
         { name: 'Contact', path: '/' },
     ];
+
     return (
-        <div className="border ">
-            <div className="navbar relative z-10 max-w-[1230px] mx-auto my-5">
+        <div>
+            <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,42 +39,49 @@ const Navbar = () => {
                                     d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </div>
-                        <ul tabIndex={0} className="flex flex-col  dropdown-content  mt-3 w-36 p-2 text-[16px] ">
-                            {links.map(link => (
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-xl lato">
+                            {
+                                links.map(link => (
+                                    <li key={link.name}>
+                                        <Link
+                                            href={link.path}
+                                            className={activeLink === link.name ? 'text-[#FF3811] lato' : 'text-black'}
+                                            onClick={() => setActiveLink(link.name)}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                    <a className="text-xl">
+                        <Image src='/assets/logo.svg' height={50} width={90} alt="logo" />
+                    </a>
+                </div>
+                <div className="navbar-center hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1 text-xl lato">
+                        {
+                            links.map(link => (
                                 <li key={link.name}>
                                     <Link
                                         href={link.path}
-                                        className={activeLink === link.name ? 'text-[#FF3811]' : 'text-black'}
+                                        className={activeLink === link.name ? 'text-[#FF3811] ' : 'text-black'}
                                         onClick={() => setActiveLink(link.name)}
                                     >
                                         {link.name}
                                     </Link>
                                 </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <Image src='/logo.png' height={46} width={157} alt="logo image"></Image>
-
-                </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="flex flex-row px-1 space-x-[30px] text-[16px]">
-                        {links.map(link => (
-                            <li key={link.name}>
-                                <Link
-                                    href={link.path}
-                                    className={activeLink === link.name ? 'text-[#FF3811]' : 'text-black'}
-                                    onClick={() => setActiveLink(link.name)}
-                                >
-                                    {link.name}
-                                </Link>
-                            </li>
-                        ))}
+                            ))
+                        }
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <button className="px-8 py-4 border-2 border-[#FF3811] text-[#FF3811] text-xl rounded-[4px] hover:bg-[#FF3811] hover:text-white transition-colors duration-300">
-                        Get Appointment
-                    </button>
+                <div className="navbar-end flex items-center gap-4">
+                    <IoBagOutline className="text-2xl text-black"/>
+                    <IoIosSearch className="text-2xl text-black"/>
+                    <a className="bg-white lato hover:bg-[#FF3811] border border-[#FF3811] text-xl text-[#FF3811] hover:text-white rounded-lg px-6 py-3">Appointment</a>
                 </div>
             </div>
         </div>
