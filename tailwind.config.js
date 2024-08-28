@@ -17,4 +17,9 @@ module.exports = {
   plugins: [
     require('daisyui'),
   ],
+  daisyui: {
+    themes: [
+      'light', // Use 'dark' for dark mode, or remove to use default DaisyUI themes
+    ],
+  },
 };
