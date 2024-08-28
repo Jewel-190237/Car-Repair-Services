@@ -20,7 +20,7 @@ const Navbar = () => {
         { name: 'Contact', path: '/' },
     ];
     return (
-        <div className="border border-b-red-400 border-dashed ">
+        <div className="border ">
             <div className="navbar relative z-10 max-w-[1230px] mx-auto my-5">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -43,7 +43,7 @@ const Navbar = () => {
                                 <li key={link.name}>
                                     <Link
                                         href={link.path}
-                                        className={activeLink === link.name ? 'text-[#B68C5A]' : ''}
+                                        className={activeLink === link.name ? 'text-[#FF3811]' : 'text-black'}
                                         onClick={() => setActiveLink(link.name)}
                                     >
                                         {link.name}
@@ -61,7 +61,7 @@ const Navbar = () => {
                             <li key={link.name}>
                                 <Link
                                     href={link.path}
-                                    className={activeLink === link.name ? 'text-[#B68C5A]' : ''}
+                                    className={activeLink === link.name ? 'text-[#FF3811]' : 'text-black'}
                                     onClick={() => setActiveLink(link.name)}
                                 >
                                     {link.name}
@@ -71,7 +71,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300">
+                    <button className="px-8 py-4 border-2 border-[#FF3811] text-[#FF3811] text-xl rounded-[4px] hover:bg-[#FF3811] hover:text-white transition-colors duration-300">
                         Get Appointment
                     </button>
                 </div>
