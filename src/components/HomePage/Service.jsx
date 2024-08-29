@@ -1,6 +1,9 @@
 import React from 'react';
 
+import {services} from '../lib/service'
+
 const Service = () => {
+    console.log(services);
     return (
         <section className='mt-20'>
             <div className='w-full mx-auto'>
