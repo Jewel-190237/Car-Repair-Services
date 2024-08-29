@@ -53,7 +53,7 @@ const Banner = () => {
                         </div>
                         <div className="absolute right-12 bottom-10 flex gap-4">
                             <a href={banner.prev} className="btn btn-circle  border-2 border-[#FF3811]">❮</a>
-                            <a href={banner.next} className="btn btn-circle bg-[#FF3811]">❯</a>
+                            <a href={banner.next} className="btn btn-circle bg-[#FF3811] text-white">❯</a>
                         </div>
                     </div>
                 ))
