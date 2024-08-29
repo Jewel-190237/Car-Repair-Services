@@ -1,3 +1,3 @@
-export const contactDB = {
+export const contactDB = async() => {
     
 }
