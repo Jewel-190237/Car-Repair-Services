@@ -16,6 +16,10 @@ const Page = () => {
         console.log('Failed:', errorInfo);
     };
 
+    const handleLogin = async() => {
+        
+    }
+
     return (
         <section className='mt-5'>
             <div className='flex flex-col lg:flex-row items-center'>
@@ -26,7 +30,7 @@ const Page = () => {
                     <div className='ml-5 lg:ml-20 border px-10 py-5'>
                         <h1 className='lato text-5xl text-black font-bold text-center'>Login</h1>
                         <Form
-
+                            onClick={handleLogin}
                             initialValues={{ remember: true }}
                             onFinish={onFinish}
                             onFinishFailed={onFinishFailed}
