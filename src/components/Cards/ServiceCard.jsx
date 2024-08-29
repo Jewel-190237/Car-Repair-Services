@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
+import { GoArrowRight } from "react-icons/go";
+
 
 const ServiceCard = ({ service }) => {
 
@@ -12,8 +14,9 @@ const ServiceCard = ({ service }) => {
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title lato text-xl">{title}</h2>
-                    <div className="card-actions justify-between">
+                    <div className="card-actions justify-between items-center">
                         <p className='text-[#FF3811] mt-4 lato font-bold'>Price: ${price}</p>
+                        <button><GoArrowRight className='text-[#FF3811] text-xl font-bold' /></button>
                     </div>
                 </div>
             </div>
