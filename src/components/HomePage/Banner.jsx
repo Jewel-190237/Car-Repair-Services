@@ -43,18 +43,17 @@ const Banner = () => {
                         id={`slide${index + 1}`}
                         className="carousel-item relative w-full bg-top bg-no-repeat h-[90vh] rounded-lg"
                     >
-                        <div className="flex flex-col justify-center">
-                            <h1 className="text-white text-6xl">{banner.title}</h1>
-                            <p className="text-white"> {banner.description}</p>
+                        <div className="flex flex-col justify-center space-y-10 ml-5 lg:ml-24">
+                            <h1 className="text-white text-6xl w-full lg:w-2/5 font-extrabold lato">{banner.title}</h1>
+                            <p className="text-white w-full lg:w-3/5 lato"> {banner.description}</p>
                             <div className="flex gap-5">
-                                <button className="lato bg-white lato hover:bg-[#FF3811] border border-[#FF3811] text-xl text-[#FF3811] hover:text-white rounded-lg px-6 py-3">Discover More </button>
-                                <button className="lato bg-white lato hover:bg-[#FF3811] border border-[#FF3811] text-xl text-[#FF3811] hover:text-white rounded-lg px-6 py-3">Latest Project</button>
-
+                                <button className="lato bg-[#FF3811] border border-[#FF3811] text-xl text-white rounded-lg px-6 py-3 font-bold">Discover More </button>
+                                <button className="lato hover:bg-[#FF3811] border border-white text-xl text-white rounded-lg px-6 py-3 font-bold">Latest Project</button>
                             </div>
                         </div>
-                        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                            <a href={banner.prev} className="btn btn-circle">❮</a>
-                            <a href={banner.next} className="btn btn-circle">❯</a>
+                        <div className="absolute right-12 bottom-10 flex gap-4">
+                            <a href={banner.prev} className="btn btn-circle  border-2 border-[#FF3811]">❮</a>
+                            <a href={banner.next} className="btn btn-circle bg-[#FF3811]">❯</a>
                         </div>
                     </div>
                 ))
