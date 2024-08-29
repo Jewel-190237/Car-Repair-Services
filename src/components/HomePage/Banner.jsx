@@ -36,13 +36,21 @@ const Banner = () => {
             {
                 banners.map((banner, index) => (
                     <div
-                        style={{ backgroundImage: `url('/assets/images/banner/${index+1}.jpg')` }}
+                        style={{
+                            backgroundImage: `linear-gradient(45deg, rgba(7, 25, 82, 0.7), rgba(0, 0, 0, 0.3)), url('/assets/images/banner/${index + 1}.jpg')`
+                        }}
                         key={index}
-                        id={`slide${index+1}`}
-                        className="carousel-item relative w-full h-screen"
+                        id={`slide${index + 1}`}
+                        className="carousel-item relative w-full bg-top bg-no-repeat h-[90vh] rounded-lg"
                     >
-                        <div className="">
+                        <div className="flex flex-col justify-center">
+                            <h1 className="text-white text-6xl">{banner.title}</h1>
+                            <p className="text-white"> {banner.description}</p>
+                            <div className="flex gap-5">
+                                <button className="lato bg-white lato hover:bg-[#FF3811] border border-[#FF3811] text-xl text-[#FF3811] hover:text-white rounded-lg px-6 py-3">Discover More </button>
+                                <button className="lato bg-white lato hover:bg-[#FF3811] border border-[#FF3811] text-xl text-[#FF3811] hover:text-white rounded-lg px-6 py-3">Latest Project</button>
 
+                            </div>
                         </div>
                         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                             <a href={banner.prev} className="btn btn-circle">❮</a>
