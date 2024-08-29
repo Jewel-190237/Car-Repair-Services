@@ -1,6 +1,7 @@
 import React from 'react';
 
-import {services} from '../lib/service'
+import { services } from '../lib/service'
+import ServiceCard from '../Cards/ServiceCard';
 
 const Service = () => {
     console.log(services);
@@ -13,8 +14,12 @@ const Service = () => {
                     <p className='text-[#737373] lato text-center'>The majority have suffered alteration in some form, by injected humour, or randomised <br /> words which dont look even slightly believable.  </p>
                 </div>
             </div>
-            <div className='mt-12'>
-
+            <div className='mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                { 
+                    services.map((service) => (
+                        <ServiceCard service = {service} key={service.id}></ServiceCard>
+                    ))
+                }
             </div>
         </section>
     );
