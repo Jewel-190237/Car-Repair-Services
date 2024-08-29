@@ -7,9 +7,6 @@ import { FaLinkedin } from "react-icons/fa";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import Link from 'next/link';
 
-
-
-
 const Page = () => {
     const onFinish = (values) => {
         console.log('Success:', values);
@@ -27,7 +24,7 @@ const Page = () => {
                 </div>
                 <div className='flex-1'>
                     <div className='ml-5 lg:ml-20 border px-10 py-5'>
-                        <h1 className='lato text-5xl text-black font-bold text-center'>Sign Up</h1>
+                        <h1 className='lato text-5xl text-black font-bold text-center'>Login</h1>
                         <Form
 
                             initialValues={{ remember: true }}
@@ -35,7 +32,7 @@ const Page = () => {
                             onFinishFailed={onFinishFailed}
                             autoComplete="off"
                         >
-                            <div className='mt-10'>
+                            {/* <div className='mt-10'>
                                 <p className='lato text-xl'>Name:</p>
                                 <Form.Item
                                     name="username"
@@ -45,7 +42,7 @@ const Page = () => {
                                 >
                                     <Input className='border border-[#FF3811] p-3' placeholder='Name' />
                                 </Form.Item>
-                            </div>
+                            </div> */}
                             <div className='mt-10'>
                                 <p className='lato text-xl'>Email:</p>
                                 <Form.Item className=''
@@ -72,7 +69,7 @@ const Page = () => {
 
                             <Form.Item >
                                 <Button className='lato font-bold mt-5 w-full p-5 border border-[#FF3811] bg-[#FF3811] text-white'>
-                                    Sign Up
+                                    Login
                                 </Button>
                             </Form.Item>
                         </Form>
@@ -82,7 +79,7 @@ const Page = () => {
                             <button><FaLinkedin/> </button>
                             <button><AiFillGoogleCircle/> </button>
                         </div>
-                        <p className='mt-5 lato text-[#737373] text-center'>Already have an account <span className='text-[#FF3811] font-bold'> <Link href='/signup'>Login</Link> </span> </p>
+                        <p className='mt-5 lato text-[#737373] text-center'>New Here ? Please <span className='text-[#FF3811] font-bold'> <Link href='/signup'>SignUp</Link> </span> </p>
                     </div>
                 </div>
             </div>
