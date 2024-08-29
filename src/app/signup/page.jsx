@@ -19,6 +19,9 @@ const Page = () => {
     const handleSignUp = async() => {
 
     };
+    const newUser = {
+        name: event.target.name.value 
+    }
 
     return (
         <section className='mt-5'>
