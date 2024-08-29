@@ -8,20 +8,20 @@ import { AiFillGoogleCircle } from "react-icons/ai";
 import Link from 'next/link';
 
 const Page = () => {
-    const onFinish = (values) => {
-        console.log('Success:', values);
-    };
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
 
-    const handleSignUp = async() => {
-
+    const handleSignUp = async (values) => {
+        const newUser = {
+            name: values.name,
+            email: values.email,
+            password: values.password
+        };
+        console.log(newUser);
+        // You can add additional logic here to handle the form submission (e.g., API request)
     };
-    const newUser = {
-        name: event.target.name.value 
-    }
 
     return (
         <section className='mt-5'>
@@ -33,16 +33,15 @@ const Page = () => {
                     <div className='ml-5 lg:ml-20 border px-10 py-5'>
                         <h1 className='lato text-5xl text-black font-bold text-center'>Sign Up</h1>
                         <Form
-                            onClick={handleSignUp}
                             initialValues={{ remember: true }}
-                            onFinish={onFinish}
+                            onFinish={handleSignUp} // This handles the form submission
                             onFinishFailed={onFinishFailed}
                             autoComplete="off"
                         >
                             <div className='mt-10'>
                                 <p className='lato text-xl'>Name:</p>
                                 <Form.Item
-                                    name="username"
+                                    name="name"
                                     rules={[
                                         { required: true, message: 'Please input your Name!' },
                                     ]}
@@ -52,10 +51,10 @@ const Page = () => {
                             </div>
                             <div className='mt-10'>
                                 <p className='lato text-xl'>Email:</p>
-                                <Form.Item className=''
+                                <Form.Item
                                     name="email"
                                     rules={[
-                                        { required: true, type: 'email' },
+                                        { required: true, type: 'email', message: 'Please input a valid email!' },
                                     ]}
                                 >
                                     <Input className='border border-[#FF3811] p-3' placeholder='Email' />
@@ -65,7 +64,6 @@ const Page = () => {
                                 <p className='lato text-xl'>Password:</p>
                                 <Form.Item
                                     name="password"
-
                                     rules={[
                                         { required: true, message: 'Please input your password!' },
                                     ]}
@@ -75,7 +73,7 @@ const Page = () => {
                             </div>
 
                             <Form.Item >
-                                <Button className='lato font-bold mt-5 w-full p-5 border border-[#FF3811] bg-[#FF3811] text-white'>
+                                <Button type="primary" htmlType="submit" className='lato font-bold mt-5 w-full p-5 border border-[#FF3811] bg-[#FF3811] text-white'>
                                     Sign Up
                                 </Button>
                             </Form.Item>
