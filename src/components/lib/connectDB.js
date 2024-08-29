@@ -1,5 +1,5 @@
+import { MongoClient, ServerApiVersion } from "mongodb";
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
 let db;
 
 export const connectDB = async () => {
@@ -14,7 +14,8 @@ export const connectDB = async () => {
         deprecationErrors: true,
       }
     });
-    db = db.connect('car-doctor-next');
+    db = client.db('car-doctor-next');
+    return db
   } catch (error) {
     console.log(error)
   }
