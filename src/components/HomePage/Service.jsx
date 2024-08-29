@@ -4,7 +4,7 @@ import { services } from '../lib/service'
 import ServiceCard from '../Cards/ServiceCard';
 
 const Service = () => {
-    console.log(services);
+    // console.log(services);
     return (
         <section className='mt-20'>
             <div className='w-full mx-auto'>
