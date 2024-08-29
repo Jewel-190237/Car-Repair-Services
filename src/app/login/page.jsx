@@ -17,8 +17,8 @@ const Page = () => {
     };
 
     const handleLogin = async() => {
-        
-    }
+
+    };
 
     return (
         <section className='mt-5'>
