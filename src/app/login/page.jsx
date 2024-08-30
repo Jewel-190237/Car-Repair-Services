@@ -16,12 +16,13 @@ const Page = () => {
     const handleLogin = async (values) => {
         const email = values.email;
         const password = values.password;
-        const resp = await signIn("credentials", {
+        console.log('received');
+        const resp = await signIn('credentials', {
             email,
             password,
             redirect: false
         });
-        console.log(resp)
+        console.log(resp);
     };
 
     return (
@@ -34,7 +35,7 @@ const Page = () => {
                     <div className='ml-5 lg:ml-20 border px-10 py-5'>
                         <h1 className='lato text-5xl text-black font-bold text-center'>Login</h1>
                         <Form
-                            onFinish={handleLogin}
+                            // onFinish={handleLogin1}
                             initialValues={{ remember: true }}
                             onFinishFailed={onFinishFailed}
                             autoComplete="off"
@@ -65,7 +66,7 @@ const Page = () => {
                             </div>
 
                             <Form.Item >
-                                <Button className='lato font-bold mt-5 w-full p-5 border border-[#FF3811] bg-[#FF3811] text-white'>
+                                <Button onClick={handleLogin} className='lato font-bold mt-5 w-full p-5 border border-[#FF3811] bg-[#FF3811] text-white'>
                                     Login
                                 </Button>
                             </Form.Item>
