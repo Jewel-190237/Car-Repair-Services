@@ -1,6 +1,7 @@
 "use client"
 import Image from 'next/image';
 import React from 'react';
+import {signIn} from 'next-auth/react';
 import { Button, Form, Input } from 'antd';
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
