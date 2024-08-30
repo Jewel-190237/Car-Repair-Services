@@ -20,7 +20,7 @@ const handler = NextAuth({
                     return null;
                 }
 
-                const db = connectDB();
+                const db = await connectDB();
                 const currentUser = await db.collection('users').findOne({ email })
                 if (!currentUser) {
                     return null;
