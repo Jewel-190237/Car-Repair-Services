@@ -12,29 +12,29 @@ const handler = NextAuth({
         CredentialsProvider({
             credentials: {
                 email: {},
-                password: {}
+                password: {},
             },
             async authorize(credentials) {
-                // return true;
                 const { email, password } = credentials;
                 if (!email || !password) {
                     return null;
                 }
-
                 const db = await connectDB();
-                const currentUser = await db.collection("users").findOne({ email })
+                const currentUser = await db.collection("users").findOne({ email });
                 if (!currentUser) {
                     return null;
                 }
-                const passwordMatch = bcrypt.compareSync(
+                const passwordMatched = bcrypt.compareSync(
                     password,
-                    currentUser.password);
-                if (!passwordMatch) {
+                    currentUser.password
+                );
+                if (!passwordMatched) {
                     return null;
                 }
                 return currentUser;
-            }
-        })
+            },
+        }),
+        
     ],
     callbacks: {},
     pages: {
