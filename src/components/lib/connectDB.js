@@ -6,7 +6,7 @@ export const connectDB = async () => {
   if (db)
     return db;
   try {
-    const uri = "mongodb+srv://CarDoctor2:L0wOtcYEm4cHUHH1@cluster0.kwtddbl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    const uri = process.env.NEXT_MONGODB_URI;
     const client = new MongoClient(uri, {
       serverApi: {
         version: ServerApiVersion.v1,
