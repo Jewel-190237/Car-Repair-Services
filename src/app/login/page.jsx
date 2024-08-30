@@ -1,13 +1,12 @@
 "use client"
 import Image from 'next/image';
 import React from 'react';
-import {signIn} from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 import { Button, Form, Input } from 'antd';
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import Link from 'next/link';
-import { redirect } from 'next/dist/server/api-utils';
 
 const Page = () => {
 
@@ -18,10 +17,12 @@ const Page = () => {
     const handleLogin = async (values) => {
         const email = values.email;
         const password = values.password;
-        const resp = await signIn('credentials', {
-            email, password, redirect
-        })
-
+        const resp = await signIn("credentials", {
+            email,
+            password,
+            redirect: false
+        });
+        console.log(resp)
     };
 
     return (
