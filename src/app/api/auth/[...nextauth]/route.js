@@ -5,7 +5,7 @@ const handler = async () => NextAuth({
     providers: {},
     callbacks: {},
     pages: {
-        signIn: ''
+        signIn: '/login'
     }
 })
 
