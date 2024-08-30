@@ -36,17 +36,7 @@ const Page = () => {
                             onFinishFailed={onFinishFailed}
                             autoComplete="off"
                         >
-                            {/* <div className='mt-10'>
-                                <p className='lato text-xl'>Name:</p>
-                                <Form.Item
-                                    name="username"
-                                    rules={[
-                                        { required: true, message: 'Please input your Name!' },
-                                    ]}
-                                >
-                                    <Input className='border border-[#FF3811] p-3' placeholder='Name' />
-                                </Form.Item>
-                            </div> */}
+                            
                             <div className='mt-10'>
                                 <p className='lato text-xl'>Email:</p>
                                 <Form.Item className=''

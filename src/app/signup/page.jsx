@@ -19,8 +19,15 @@ const Page = () => {
             email: values.email,
             password: values.password
         };
-        console.log(newUser);
-        // You can add additional logic here to handle the form submission (e.g., API request)
+        // console.log(newUser);
+        const resp = await fetch("http://localhost:3000/signup/api", {
+            method: "POST",
+            body: JSON.stringify(newUser),
+            headers: {
+                "content-type" : "application/json"
+            }
+        })
+        console.log(resp)
     };
 
     return (
