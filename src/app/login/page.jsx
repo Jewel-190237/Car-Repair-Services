@@ -6,17 +6,20 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import Link from 'next/link';
+import { redirect } from 'next/dist/server/api-utils';
 
 const Page = () => {
-    const onFinish = (values) => {
-        console.log('Success:', values);
-    };
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
 
-    const handleLogin = async() => {
+    const handleLogin = async (values) => {
+        const email = values.email;
+        const password = values.password;
+        const resp = await signIn('credentials', {
+            email, password, redirect
+        })
 
     };
 
@@ -30,13 +33,12 @@ const Page = () => {
                     <div className='ml-5 lg:ml-20 border px-10 py-5'>
                         <h1 className='lato text-5xl text-black font-bold text-center'>Login</h1>
                         <Form
-                            onClick={handleLogin}
+                            onFinish={handleLogin}
                             initialValues={{ remember: true }}
-                            onFinish={onFinish}
                             onFinishFailed={onFinishFailed}
                             autoComplete="off"
                         >
-                            
+
                             <div className='mt-10'>
                                 <p className='lato text-xl'>Email:</p>
                                 <Form.Item className=''
@@ -69,9 +71,9 @@ const Page = () => {
                         </Form>
                         <p className='lato mt-5 text-center'>or continue with</p>
                         <div className='mt-5 flex text-3xl justify-center text-blue-800 gap-3'>
-                            <button> <FaFacebook/> </button>
-                            <button><FaLinkedin/> </button>
-                            <button><AiFillGoogleCircle/> </button>
+                            <button> <FaFacebook /> </button>
+                            <button><FaLinkedin /> </button>
+                            <button><AiFillGoogleCircle /> </button>
                         </div>
                         <p className='mt-5 lato text-[#737373] text-center'>New Here ? Please <span className='text-[#FF3811] font-bold'> <Link href='/signup'>SignUp</Link> </span> </p>
                     </div>
