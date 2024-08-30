@@ -7,6 +7,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import Link from 'next/link';
 
+
 const Page = () => {
 
     const onFinishFailed = (errorInfo) => {
@@ -27,7 +28,8 @@ const Page = () => {
                 "content-type" : "application/json"
             }
         })
-        console.log(resp)
+        console.log(resp);
+        console.log(resp.status);
     };
 
     return (
