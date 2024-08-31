@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { services } from '../lib/service'
+import { services } from '../../lib/services'
 import ServiceCard from '../Cards/ServiceCard';
 
 const Service = () => {

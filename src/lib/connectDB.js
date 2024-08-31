@@ -1,26 +1,19 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
-
 let db;
-
 export const connectDB = async () => {
-  if (db)
-    return db;
+  if (db) return db;
   try {
-    const uri = process.env.NEXT_MONGODB_URI;
+    const uri = process.env.NEXT_MONGODB_URI
     const client = new MongoClient(uri, {
       serverApi: {
         version: ServerApiVersion.v1,
         strict: true,
         deprecationErrors: true,
-      }
+      },
     });
-    db = client.db('car-doctor-next');
+    db = client.db('car-doctor-next')
     return db;
   } catch (error) {
-    console.log(error)
+    console.log({error});
   }
-}
-
-
-
-
+};
