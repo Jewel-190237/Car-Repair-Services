@@ -24,13 +24,13 @@ const handler = NextAuth({
                 if (!currentUser) {
                     return null;
                 }
-                const passwordMatched = bcrypt.compareSync(
-                    password,
-                    currentUser.password
-                );
-                if (!passwordMatched) {
-                    return null;
-                }
+                // const passwordMatched = bcrypt.compareSync(
+                //     password,
+                //     currentUser.password
+                // );
+                // if (!passwordMatched) {
+                //     return null;
+                // }
                 return currentUser;
             },
         }),
