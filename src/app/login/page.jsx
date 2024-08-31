@@ -49,7 +49,7 @@ const Page = () => {
                             type="text"
                             name="email"
                             placeholder="your email"
-                            className="mt-3 w-full input input-bordered"
+                            className="mt-3 w-full border border-[#FF3811] p-3 rounded-lg"
                         />
                         <br /> <br />
                         <label htmlFor="password">Password</label> <br />
@@ -57,7 +57,7 @@ const Page = () => {
                             type="password"
                             name="password"
                             placeholder="your password"
-                            className="w-full mt-3 input input-bordered"
+                            className="w-full mt-3 border border-[#FF3811] p-3 rounded-lg"
                         />
                         <br />
                         <button
