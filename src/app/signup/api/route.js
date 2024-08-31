@@ -1,21 +1,24 @@
-import { connectDB } from "@/components/lib/connectDB";
+import { connectDB } from "@/lib/connectDB";
 import bcrypt from "bcrypt";
-
-
+import { NextResponse } from "next/server";
 export const POST = async (request) => {
-    const newUser = await request.json();
-    try {
-        const db = await connectDB();
-        const userCollection = db.collection("users");
-
-        const exists = await userCollection.findOne({ email: newUser.email });
-        if (exists) {
-            return Response.json({ message: 'user already exists' }, { status: 304 });
-        }
-        const hashPassword = bcrypt.hashSync(newUser.password, 14);
-        const res = await userCollection.insertOne({ ...newUser, password: hashPassword });
-        return Response.json({ message: 'user created' }, { status: 200 });
-    } catch (error) {
-        return Response.json({ message: 'something went wrong' }, { status: 500 });
+  const newUser = await request.json();
+  try {
+    const db = await connectDB();
+    const userCollection = db.collection("users");
+    const exist =await userCollection.findOne({ email: newUser.email });
+    console.log(exist);
+    if(exist) {
+      return NextResponse.json({ message: "User Exists" }, { status: 304 });
     }
-}
+    const hashedPassword = bcrypt.hashSync(newUser.password, 14);
+    const resp = await userCollection.insertOne({...newUser, password: hashedPassword});
+    
+    return NextResponse.json({ message: "User Created" }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Something Went Wrong", error },
+      { status: 500 }
+    );
+  }
+};
