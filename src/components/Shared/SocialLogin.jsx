@@ -7,13 +7,12 @@ const SocialLogin = () => {
 
     const handleSocialLogin = async(provider) => {
         const resp = await signIn(provider);
-
     }
 
     return (
         <div>
             <div className='mt-5 flex text-3xl justify-center text-blue-800 gap-3'>
-                <button onClick={() => handleSocialLogin('gitHub')}> <FaGithub/> </button>
+                <button onClick={() => handleSocialLogin('github')}> <FaGithub/> </button>
                 <button onClick={() => handleSocialLogin('google')}><AiFillGoogleCircle /> </button>
                 <button onClick={() => handleSocialLogin('facebook')}> <FaFacebook /> </button>
             </div>
