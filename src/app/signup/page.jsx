@@ -6,6 +6,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import Link from 'next/link';
+import SocialLogin from '@/components/Shared/SocialLogin';
 
 
 const Page = () => {
@@ -88,11 +89,7 @@ const Page = () => {
                             </Form.Item>
                         </Form>
                         <p className='lato mt-5 text-center'>or continue with</p>
-                        <div className='mt-5 flex text-3xl justify-center text-blue-800 gap-3'>
-                            <button> <FaFacebook /> </button>
-                            <button><FaLinkedin /> </button>
-                            <button><AiFillGoogleCircle /> </button>
-                        </div>
+                        <SocialLogin/>
                         <p className='mt-5 lato text-[#737373] text-center'>Already have an account <span className='text-[#FF3811] font-bold'> <Link href='/login'>Login</Link> </span> </p>
                     </div>
                 </div>
