@@ -1,87 +1,82 @@
-"use client"
-import Image from 'next/image';
-import React from 'react';
-import { signIn } from 'next-auth/react';
-import { Button, Form, Input } from 'antd';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { signIn, useSession } from "next-auth/react";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { AiFillGoogleCircle } from "react-icons/ai";
-import Link from 'next/link';
-
+// import { BsGoogle, BsGithub } from "react-icons/bs";
+// import { useRouter, useSearchParams } from "next/navigation";
+// import SocialSignin from "@/components/shared/SocialSignin";
 const Page = () => {
+    //   const router = useRouter();
+    //   const session = useSession();
+    //   const searchParams = useSearchParams();
+    //   const path = searchParams.get("redirect");
 
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-    };
-
-    const handleLogin = async (values) => {
-        const email = values.email;
-        const password = values.password;
-        console.log('received');
-        const resp = await signIn('credentials', {
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        const resp = await signIn("credentials", {
             email,
             password,
-            redirect: false
+            redirect: false,
+            //   callbackUrl: path ? path : "/",
         });
-        console.log(resp);
+        // console.log(resp)
+        console.log("llllllllllllll", resp);
     };
 
     return (
-        <section className='mt-5'>
-            <div className='flex flex-col lg:flex-row items-center'>
-                <div className='flex-1'>
-                    <Image src='/assets/images/login/login.svg' width={540} height={640} alt='login' />
+        <div className="max-w-[1320px] mx-auto py-20">
+            <div className="grid grid-cols-2 gap-12 items-center">
+                <div>
+                    <Image
+                        src="/assets/images/login/login.svg"
+                        height="540"
+                        width="540"
+                        alt="login image"
+                    />
                 </div>
-                <div className='flex-1'>
-                    <div className='ml-5 lg:ml-20 border px-10 py-5'>
-                        <h1 className='lato text-5xl text-black font-bold text-center'>Login</h1>
-                        <Form
-                            // onFinish={handleLogin1}
-                            initialValues={{ remember: true }}
-                            onFinishFailed={onFinishFailed}
-                            autoComplete="off"
-                        >
+                <div className="border-2 p-12">
+                    <h6 className="text-3xl font-semibold text-black lato text-center mb-12">
+                        Sign In
+                    </h6>
+                    <form onSubmit={handleLogin} action="">
+                        <label htmlFor="email">Email</label> <br />
+                        <input
+                            type="text"
+                            name="email"
+                            placeholder="your email"
+                            className="mt-3 w-full input input-bordered"
+                        />
+                        <br /> <br />
+                        <label htmlFor="password">Password</label> <br />
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="your password"
+                            className="w-full mt-3 input input-bordered"
+                        />
+                        <br />
+                        <button
+                            type="submit" className='lato font-bold mt-10 rounded-lg w-full p-3 border border-[#FF3811] bg-[#FF3811] text-white'>
+                            Sign Up
+                        </button>
+                    </form>
 
-                            <div className='mt-10'>
-                                <p className='lato text-xl'>Email:</p>
-                                <Form.Item className=''
-                                    name="email"
-                                    rules={[
-                                        { required: true, type: 'email' },
-                                    ]}
-                                >
-                                    <Input className='border border-[#FF3811] p-3' placeholder='Email' />
-                                </Form.Item>
-                            </div>
-                            <div className='mt-10'>
-                                <p className='lato text-xl'>Password:</p>
-                                <Form.Item
-                                    name="password"
-
-                                    rules={[
-                                        { required: true, message: 'Please input your password!' },
-                                    ]}
-                                >
-                                    <Input.Password className='border border-[#FF3811] p-3' placeholder='Password' />
-                                </Form.Item>
-                            </div>
-
-                            <Form.Item >
-                                <Button onClick={handleLogin} className='lato font-bold mt-5 w-full p-5 border border-[#FF3811] bg-[#FF3811] text-white'>
-                                    Login
-                                </Button>
-                            </Form.Item>
-                        </Form>
-                        <p className='lato mt-5 text-center'>or continue with</p>
-                        <div className='mt-5 flex text-3xl justify-center text-blue-800 gap-3'>
-                            <button> <FaFacebook /> </button>
-                            <button><FaLinkedin /> </button>
-                            <button><AiFillGoogleCircle /> </button>
-                        </div>
-                        <p className='mt-5 lato text-[#737373] text-center'>New Here ? Please <span className='text-[#FF3811] font-bold'> <Link href='/signup'>SignUp</Link> </span> </p>
+                    <p className='lato mt-5 text-center'>or continue with</p>
+                    <div className='mt-5 flex text-3xl justify-center text-blue-800 gap-3'>
+                        <button> <FaFacebook /> </button>
+                        <button><FaLinkedin /> </button>
+                        <button><AiFillGoogleCircle /> </button>
                     </div>
+                    <p className='mt-5 lato text-[#737373] text-center'>New Here ? Please <span className='text-[#FF3811] font-bold'> <Link href='/signup'>Sign Up</Link> </span> </p>
+
                 </div>
             </div>
-        </section>
+        </div >
     );
 };
 
