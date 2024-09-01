@@ -6,14 +6,14 @@ import { signIn, useSession } from "next-auth/react";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import SocialLogin from "@/components/Shared/SocialLogin";
+import { useRouter } from "next/navigation";
 // import { BsGoogle, BsGithub } from "react-icons/bs";
 // import { useRouter, useSearchParams } from "next/navigation";
 // import SocialSignin from "@/components/shared/SocialSignin";
 const Page = () => {
-    //   const router = useRouter();
-    //   const session = useSession();
-    //   const searchParams = useSearchParams();
-    //   const path = searchParams.get("redirect");
+      const router = useRouter();
+      const session = useSession();
+   
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -25,8 +25,9 @@ const Page = () => {
             redirect: false,
             //   callbackUrl: path ? path : "/",
         });
-        // console.log(resp)
-        console.log("llllllllllllll", resp);
+        if(resp.status === 200){
+            router.push('/')
+        }
     };
 
     return (

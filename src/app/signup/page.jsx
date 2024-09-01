@@ -2,9 +2,6 @@
 import Image from 'next/image';
 import React from 'react';
 import { Button, Form, Input } from 'antd';
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { AiFillGoogleCircle } from "react-icons/ai";
 import Link from 'next/link';
 import SocialLogin from '@/components/Shared/SocialLogin';
 
