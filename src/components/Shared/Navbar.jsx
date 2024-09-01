@@ -5,11 +5,14 @@ import Link from 'next/link';
 import Image from "next/image";
 import { IoIosSearch } from "react-icons/io";
 import { IoBagOutline } from "react-icons/io5";
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
 
-    const session = useSession()
+    const session = useSession();
+    console.log(session.data);
+    const router = useRouter()
 
     const [activeLink, setActiveLink] = useState('Home');
 
@@ -80,9 +83,14 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex items-center gap-4">
-                    <IoBagOutline className="text-2xl text-black"/>
-                    <IoIosSearch className="text-2xl text-black"/>
+                    
                     <a className="font-bold bg-white lato hover:bg-[#FF3811] border border-[#FF3811] text-xl text-[#FF3811] hover:text-white rounded-lg px-6 py-3">Appointment</a>
+
+                    {
+                        !session.data ?
+                            <button onClick={() => router.push('/login')} className="font-bold bg-white lato hover:bg-[#FF3811] border border-[#FF3811] text-xl text-[#FF3811] hover:text-white rounded-lg px-6 py-3">Login</button> :
+                            <button onClick={() => signOut()} className="font-bold bg-white lato hover:bg-[#FF3811] border border-[#FF3811] text-xl text-[#FF3811] hover:text-white rounded-lg px-6 py-3">Logout</button>
+                    }
                 </div>
             </div>
         </div>
