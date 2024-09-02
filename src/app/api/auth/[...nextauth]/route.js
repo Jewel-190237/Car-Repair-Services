@@ -67,7 +67,8 @@ const handler = NextAuth({
 
                     const userExists = await userCollection.fineOne({email});
                     if(!userExists){
-
+                        const resp = await userCollection.insertOne(user);
+                        return user;
                     }
                     else{
                         return user;
