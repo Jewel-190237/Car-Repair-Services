@@ -4,10 +4,12 @@ import React from 'react';
 import { Button, Form, Input } from 'antd';
 import Link from 'next/link';
 import SocialLogin from '@/components/Shared/SocialLogin';
+import { useRouter } from 'next/navigation';
 
 
 const Page = () => {
 
+    const router = useRouter();
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
@@ -23,11 +25,13 @@ const Page = () => {
             method: "POST",
             body: JSON.stringify(newUser),
             headers: {
-                "content-type" : "application/json"
+                "content-type": "application/json"
             }
         })
         console.log(resp);
-        console.log(resp.status);
+        if (resp.status === 200) {
+            router.push('/')
+        }
     };
 
     return (
@@ -86,7 +90,7 @@ const Page = () => {
                             </Form.Item>
                         </Form>
                         <p className='lato mt-5 text-center'>or continue with</p>
-                        <SocialLogin/>
+                        <SocialLogin />
                         <p className='mt-5 lato text-[#737373] text-center'>Already have an account <span className='text-[#FF3811] font-bold'> <Link href='/login'>Login</Link> </span> </p>
                     </div>
                 </div>
