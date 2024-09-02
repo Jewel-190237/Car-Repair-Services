@@ -3,8 +3,15 @@ import React from 'react';
 import { services } from '../../lib/services'
 import ServiceCard from '../Cards/ServiceCard';
 
-const Service = () => {
-    // console.log(services);
+const getService = async() => {
+    const res = await fetch("http://localhost:3000/services/api/getAll")
+    const data = res.json()
+    return data;
+}
+
+const Service = async () => {
+    const info = await getService()
+    console.log(info.data)
     return (
         <section className='mt-20'>
             <div className='w-full mx-auto'>
@@ -15,9 +22,9 @@ const Service = () => {
                 </div>
             </div>
             <div className='mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                { 
-                    services.map((service) => (
-                        <ServiceCard service = {service} key={service.id}></ServiceCard>
+                {
+                    services?.map((service) => (
+                        <ServiceCard service={service} key={service.id}></ServiceCard>
                     ))
                 }
             </div>
