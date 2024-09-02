@@ -3,17 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { signIn, useSession } from "next-auth/react";
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
-import { AiFillGoogleCircle } from "react-icons/ai";
 import SocialLogin from "@/components/Shared/SocialLogin";
-import { useRouter } from "next/navigation";
-// import { BsGoogle, BsGithub } from "react-icons/bs";
-// import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 // import SocialSignin from "@/components/shared/SocialSignin";
 const Page = () => {
-      const router = useRouter();
-      const session = useSession();
-   
+    const router = useRouter();
+    const session = useSession();
+    const searchParams = useSearchParams();
+    const path = searchParams.get("redirect");
+
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -23,9 +21,9 @@ const Page = () => {
             email,
             password,
             redirect: false,
-            //   callbackUrl: path ? path : "/",
+            callbackUrl: path ? path : "/",
         });
-        if(resp.status === 200){
+        if (resp.status === 200) {
             router.push('/')
         }
     };
@@ -69,7 +67,7 @@ const Page = () => {
                     </form>
 
                     <p className='lato mt-5 text-center'>or continue with</p>
-                    <SocialLogin/>
+                    <SocialLogin />
                     <p className='mt-5 lato text-[#737373] text-center'>New Here ? Please <span className='text-[#FF3811] font-bold'> <Link href='/signup'>Sign Up</Link> </span> </p>
 
                 </div>
