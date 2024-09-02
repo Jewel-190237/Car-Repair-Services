@@ -28,7 +28,7 @@ const Page = () => {
     };
 
     return (
-        <div className="max-w-[1320px] mx-auto py-20">
+        <div className="max-w-[1320px] mx-auto py-20 bg-white dark:bg-black">
             <div className="grid grid-cols-2 gap-12 items-center">
                 <div>
                     <Image
@@ -39,7 +39,7 @@ const Page = () => {
                     />
                 </div>
                 <div className="border-2 p-12">
-                    <h6 className="text-3xl font-semibold text-black lato text-center mb-12">
+                    <h6 className="text-3xl font-semibold text-black dark:text-red-800 lato text-center mb-12">
                         Sign In
                     </h6>
                     <form onSubmit={handleLogin} action="">
