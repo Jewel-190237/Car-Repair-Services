@@ -84,7 +84,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex items-center gap-4">
-                    <ThemeControl/>
+                    {/* <ThemeControl/> */}
                     <IoBagOutline className="text-2xl text-black" />
                     <IoIosSearch className="text-2xl text-black" />
                     <a className="font-bold bg-white lato hover:bg-[#FF3811] border border-[#FF3811] text-xl text-[#FF3811] hover:text-white rounded-lg px-6 py-3">Appointment</a>
