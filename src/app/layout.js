@@ -13,8 +13,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="max-w-[1320px] mx-auto">
-      <body className={inter.className} >
+    <html lang="en" className="max-w-[1320px] mx-auto bg-white dark:bg-black">
+      <body className={inter.className}>
         <AuthProvider>
           <Navbar></Navbar>
           {children}
