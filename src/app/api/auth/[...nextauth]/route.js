@@ -51,13 +51,22 @@ const handler = NextAuth({
         FacebookProvider({
             clientId: process.env.FACEBOOK_CLIENT_ID,
             clientSecret: process.env.FACEBOOK_CLIENT_SECRET
-          })
+        })
     ],
     pages: {
         signIn: "/login",
 
     },
-    callbacks: {}
+    callbacks: {
+        async signIn({ user, account }) {
+            if(account.provider === 'google' || account.provider === 'github'){
+
+            }
+            else{
+                return user;
+            }
+        },
+    }
 });
 
 export { handler as GET, handler as POST };
