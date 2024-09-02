@@ -5,7 +5,6 @@ import React from "react";
 import { signIn, useSession } from "next-auth/react";
 import SocialLogin from "@/components/Shared/SocialLogin";
 import { useRouter, useSearchParams } from "next/navigation";
-// import SocialSignin from "@/components/shared/SocialSignin";
 const Page = () => {
     const router = useRouter();
     const session = useSession();
