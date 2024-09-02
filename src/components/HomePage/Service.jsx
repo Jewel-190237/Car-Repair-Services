@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { services } from '../../lib/services'
+// import { services } from '../../lib/services'
 import ServiceCard from '../Cards/ServiceCard';
 
-const getService = async() => {
-    const res = await fetch("http://localhost:3000/services/api/getAll")
-    const data = res.json()
+const getService = async () => {
+    const res = await fetch("http://localhost:3000/services/api/getAll");
+    const data = res.json();
     return data;
 }
 
 const Service = async () => {
-    const info = await getService()
-    console.log(info.data)
+    const services = await getService();
+    console.log(services)
     return (
         <section className='mt-20'>
             <div className='w-full mx-auto'>
