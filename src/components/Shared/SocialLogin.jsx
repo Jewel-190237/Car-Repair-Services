@@ -1,8 +1,8 @@
 import { signIn } from 'next-auth/react';
-import { redirect, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import React from 'react';
 import { AiFillGoogleCircle } from 'react-icons/ai';
-import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaGithub } from 'react-icons/fa';
 
 const SocialLogin = () => {
 
