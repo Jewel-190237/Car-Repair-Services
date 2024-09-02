@@ -4,8 +4,8 @@ export const GET = async () => {
     const db = await connectDB();
     const serviceCollection = db.collection("services");
     try {
-        const services = serviceCollection.find(services);
-        return Response.json({services})
+        const services = await serviceCollection.find().toArray()
+        return Response.json(services)
 
     } catch (error) {
         console.log(error)
