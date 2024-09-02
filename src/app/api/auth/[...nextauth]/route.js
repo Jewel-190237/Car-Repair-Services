@@ -62,8 +62,16 @@ const handler = NextAuth({
             if (account.provider === 'google' || account.provider === 'github') {
                 const { name, email, image } = user;
                 try {
-                    const db = connectDB();
+                    const db = await connectDB();
                     const userCollection = db.collection("users");
+
+                    const userExists = await userCollection.fineOne({email});
+                    if(!userExists){
+
+                    }
+                    else{
+                        return user;
+                    }
                 } catch (error) {
                     console.log(error)
                 }
