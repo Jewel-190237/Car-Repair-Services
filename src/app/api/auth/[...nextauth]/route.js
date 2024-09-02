@@ -59,10 +59,15 @@ const handler = NextAuth({
     },
     callbacks: {
         async signIn({ user, account }) {
-            if(account.provider === 'google' || account.provider === 'github'){
+            if (account.provider === 'google' || account.provider === 'github') {
+                const { name, email, image } = user;
+                try {
 
+                } catch (error) {
+                    console.log(error)
+                }
             }
-            else{
+            else {
                 return user;
             }
         },
