@@ -1,11 +1,7 @@
-import React from 'react';
+import { connectDB } from "@/lib/connectDB"
 
-const route = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
-
-export default route;
+export const GET = async () => {
+    const db = await connectDB();
+    const serviceCollection = db.collection("services")
+    
+}
