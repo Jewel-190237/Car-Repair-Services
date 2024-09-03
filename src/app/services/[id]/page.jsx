@@ -17,9 +17,9 @@ const page = async ({ params }) => {
                     <h4 className='text-xl font-bold text-white px-2 py-1 lato'>Home/Service Details</h4>
                 </div>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-3'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
                 <div className='col-span-2'>
-                    <Image className='' src='/carDetails.png' alt='image' height={400} width={752} />
+                    <Image className='w-[100%]' src='/carDetails.png' alt='image' height={400} width={852} />
                     <div className='mt-5'>
                         <h3 className='text-black lato text-2xl font-bold'>UniQue</h3>
                         <p>Description</p>
@@ -40,7 +40,7 @@ const page = async ({ params }) => {
                     <div className='mt-10 lato'>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. </p>
                     </div>
-                    <div className='lato mt-10 flex justify-between'>
+                    <div className='lato mt-10 flex justify-between mb-10'>
                         <div className='border p-10 flex flex-col justify-center w-[30%] rounded-lg'>
                             <div className='mx-auto'>
                                 <div className='border-[15px] border-[#FF38111A] rounded-full'>
@@ -82,16 +82,17 @@ const page = async ({ params }) => {
                         </div>
                     </div>
 
-                    <div className="relative">
+                    <div className="relative mb-10 rounded-lg" style={{ width: '100%', height: '450px' }}>
                         <iframe
                             className="absolute top-0 left-0 w-full h-full"
-                            src={`https://www.youtube.com/watch?v=ducLiWY7l4Q`}
+                            src={`https://www.youtube.com/embed/ducLiWY7l4Q`}
                             title="YouTube video player"
-                            frameBorder="0"
+                            
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                         ></iframe>
                     </div>
+
                 </div>
                 <div>
 
