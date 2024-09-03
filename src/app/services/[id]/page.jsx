@@ -48,7 +48,7 @@ const page = async ({ params }) => {
                                         1
                                     </p>
                                 </div>
-                                
+                                <h3 className='text-3xl text-black uppercase'>step one</h3>
                             </div>
 
                         </div>
