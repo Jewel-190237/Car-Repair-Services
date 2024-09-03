@@ -11,7 +11,7 @@ const Service = async () => {
         <section className='mt-20'>
             <div className='w-full mx-auto'>
                 <div className='space-y-5 text-center'>
-                    <p className='text-[#FF3811] font-bold lato text-center'>Service</p>
+                    <p className='text-[#FF3811] font-bold lato text-center'>Service: {services?.length}</p>
                     <p className='text-black font-extrabold text-5xl lato text-center'>Our Service Area</p>
                     <p className='text-[#737373] lato text-center'>The majority have suffered alteration in some form, by injected humour, or randomised <br /> words which dont look even slightly believable.  </p>
                 </div>
