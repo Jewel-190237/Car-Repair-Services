@@ -169,8 +169,8 @@ const page = async ({ params }) => {
                     <div className='mt-10 bg-black text-white rounded-lg w-[100%] mx-auto'>
                         <Image className='w-[100%]' src='/assets/logo.svg'alt='logo' height={100} width={200} />
                         <p className='text-xl font-bold'>Need Help <br /> We are Here</p>
-                        <div className='w-[80%] bg-white text-black'>
-
+                        <div className='w-[80%] bg-white text-black rounded-lg'>
+                            <p className='text-xl font-bold'> <span className='text-[#FF3811]'> Car Doctor</span>Special </p>
                         </div>
                     </div>
 
