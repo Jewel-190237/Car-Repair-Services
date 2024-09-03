@@ -150,7 +150,7 @@ const page = async ({ params }) => {
                                 <p className='text-white font-bold text-xl'>Our Brochure</p>
                                 <p className='text-white'>Download</p>
                             </div>
-                            <button className='bg-[#FF3811] text-white text-xl p-5 rounded-lg'> 
+                            <button className='bg-[#FF3811] text-white text-xl p-5 rounded-lg'>
                                 <FaArrowRight></FaArrowRight>
                             </button>
                         </div>
@@ -159,7 +159,7 @@ const page = async ({ params }) => {
                                 <p className='text-white font-bold text-xl'>Company Details</p>
                                 <p className='text-white'>Download</p>
                             </div>
-                            <button className='bg-[#FF3811] text-white text-xl p-5 rounded-lg'> 
+                            <button className='bg-[#FF3811] text-white text-xl p-5 rounded-lg'>
                                 <FaArrowRight></FaArrowRight>
                             </button>
                         </div>
@@ -167,10 +167,13 @@ const page = async ({ params }) => {
                     </div>
 
                     <div className='mt-10 bg-black text-white rounded-lg w-[100%] mx-auto'>
-                        <Image className='w-[100%]' src='/assets/logo.svg'alt='logo' height={100} width={200} />
+                        <Image className='w-[100%]' src='/assets/logo.svg' alt='logo' height={100} width={200} />
                         <p className='text-xl font-bold'>Need Help <br /> We are Here</p>
                         <div className='w-[80%] bg-white text-black rounded-lg'>
                             <p className='text-xl font-bold'> <span className='text-[#FF3811]'> Car Doctor</span>Special </p>
+                        </div>
+                        <div className='bg-[#FF3811] w-[50%] text-white '>
+                            <p></p>
                         </div>
                     </div>
 
