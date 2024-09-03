@@ -1,6 +1,9 @@
 import { getServiceDetails } from '@/Services/getServices';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import { FaArrowRight } from "react-icons/fa6";
+
 
 const page = async ({ params }) => {
     const serviceDetails = await getServiceDetails(params.id);
@@ -87,7 +90,7 @@ const page = async ({ params }) => {
                             className="absolute top-0 left-0 w-full h-full"
                             src={`https://www.youtube.com/embed/ducLiWY7l4Q`}
                             title="YouTube video player"
-                            
+
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                         ></iframe>
@@ -95,9 +98,52 @@ const page = async ({ params }) => {
 
                 </div>
                 <div className='lato'>
-                    <div className='mx-4 py-5 bg-[#F3F3F3]'>
-                        <h4 className='text-2xl font-bold text-black'>Service</h4>
-
+                    <div className='px-4 py-5 bg-[#F3F3F3] rounded-lg'>
+                        <h4 className='text-3xl font-bold text-black'>Service</h4>
+                        <Link className='mt-6' href='/'>
+                            <div className='mt-3 p-4 rounded-lg flex justify-between items-center mx-auto w-[80%] bg-white hover:bg-[#FF3811] text-black  group'>
+                                <p className='text-xl text-black font-bold group-hover:text-white hover:text-white'>Full Car Service</p>
+                                <FaArrowRight className='text-black text-2xl group-hover:text-white'></FaArrowRight>
+                            </div>
+                        </Link>
+                        <Link className='mt-6' href='/'>
+                            <div className='mt-3 p-4 rounded-lg flex justify-between items-center mx-auto w-[80%] bg-white hover:bg-[#FF3811] text-black  group'>
+                                <p className='text-xl text-black font-bold group-hover:text-white hover:text-white'>Engine Repair</p>
+                                <FaArrowRight className='text-black text-2xl group-hover:text-white'></FaArrowRight>
+                            </div>
+                        </Link>
+                        <Link className='mt-6' href='/'>
+                            <div className='mt-3 p-4 rounded-lg flex justify-between items-center mx-auto w-[80%] bg-white hover:bg-[#FF3811] text-black  group'>
+                                <p className='text-xl text-black font-bold group-hover:text-white hover:text-white'>Automatic  Service</p>
+                                <FaArrowRight className='text-black text-2xl group-hover:text-white'></FaArrowRight>
+                            </div>
+                        </Link>
+                        <Link className='mt-6' href='/'>
+                            <div className='mt-3 p-4 rounded-lg flex justify-between items-center mx-auto w-[80%] bg-white hover:bg-[#FF3811] text-black  group'>
+                                <p className='text-xl text-black font-bold group-hover:text-white hover:text-white'>Engine Oil Service</p>
+                                <FaArrowRight className='text-black text-2xl group-hover:text-white'></FaArrowRight>
+                            </div>
+                        </Link>
+                        <Link className='mt-6' href='/'>
+                            <div className='mt-3 p-4 rounded-lg flex justify-between items-center mx-auto w-[80%] bg-white hover:bg-[#FF3811] text-black  group'>
+                                <p className='text-xl text-black font-bold group-hover:text-white hover:text-white'>Battery Charge</p>
+                                <FaArrowRight className='text-black text-2xl group-hover:text-white'></FaArrowRight>
+                            </div>
+                        </Link>
+                        <Link className='mt-6' href='/'>
+                            <div className='mt-3 p-4 rounded-lg flex justify-between items-center mx-auto w-[80%] bg-white hover:bg-[#FF3811] text-black  group'>
+                                <p className='text-xl text-black font-bold group-hover:text-white hover:text-white'>Exclusive Service</p>
+                                <FaArrowRight className='text-black text-2xl group-hover:text-white'></FaArrowRight>
+                            </div>
+                        </Link>
+                        <Link className='mt-6' href='/'>
+                            <div className='mt-3 p-4 rounded-lg flex justify-between items-center mx-auto w-[80%] bg-white hover:bg-[#FF3811] text-black  group'>
+                                <p className='text-xl text-black font-bold group-hover:text-white hover:text-white'>Give and Take Service</p>
+                                <FaArrowRight className='text-black text-2xl group-hover:text-white'></FaArrowRight>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='mt-10 bg-black text-white'>
 
                     </div>
 
