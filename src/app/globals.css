@@ -10,3 +10,10 @@
   background: linear-gradient(90deg, #151515 0%, rgba(21, 21, 21, 0) 100%);
 }
 
+.bg-area{
+  clip-path: polygon(16% 78%, 86% 79%, 100% 100%, 0% 100%);
+}
+
+
+
+
