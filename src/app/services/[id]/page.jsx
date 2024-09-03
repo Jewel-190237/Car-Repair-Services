@@ -143,14 +143,23 @@ const page = async ({ params }) => {
                             </div>
                         </Link>
                     </div>
-                    <div className='mt-10 bg-black text-white'>
-                        <h4 className='text-2xl font-bold text-white p-5'> Download</h4>
-                        <div className='flex justify-between items-center'>
+                    <div className='mt-10 bg-black text-white rounded-lg'>
+                        <h4 className='text-2xl font-bold text-white px-10 pt-10'> Download</h4>
+                        <div className='flex justify-between items-center py-5 px-10'>
                             <div>
-                                <p className='text-white font-bold'>Our Brochure</p>
+                                <p className='text-white font-bold text-xl'>Our Brochure</p>
                                 <p className='text-white'>Download</p>
                             </div>
-                            <button className='bg-[#FF3811] text-white text-xl'> 
+                            <button className='bg-[#FF3811] text-white text-xl p-5 rounded-lg'> 
+                                <FaArrowRight></FaArrowRight>
+                            </button>
+                        </div>
+                        <div className='flex justify-between items-center py-5 px-10'>
+                            <div>
+                                <p className='text-white font-bold text-xl'>Company Details</p>
+                                <p className='text-white'>Download</p>
+                            </div>
+                            <button className='bg-[#FF3811] text-white text-xl p-5 rounded-lg'> 
                                 <FaArrowRight></FaArrowRight>
                             </button>
                         </div>
