@@ -144,6 +144,15 @@ const page = async ({ params }) => {
                         </Link>
                     </div>
                     <div className='mt-10 bg-black text-white'>
+                        <h4 className='text-2xl font-bold text-white p-5'> Download</h4>
+                        <div className='flex justify-between items-center'>
+                            <div>
+                                <p></p>
+                            </div>
+                            <button className='bg-[#FF3811] text-white text-xl'> 
+                                <FaArrowRight></FaArrowRight>
+                            </button>
+                        </div>
 
                     </div>
 
