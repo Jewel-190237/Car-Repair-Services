@@ -172,8 +172,8 @@ const page = async ({ params }) => {
                         <div className='w-[80%] bg-white text-black rounded-lg'>
                             <p className='text-xl font-bold'> <span className='text-[#FF3811]'> Car Doctor</span>Special </p>
                         </div>
-                        <div className='bg-[#FF3811] w-[50%] text-white '>
-                            <p></p>
+                        <div className='relative bottom-5 bg-[#FF3811] w-[50%] text-white '>
+                            <p className='text-white font-bold'>Get a Queue</p>
                         </div>
                     </div>
 
