@@ -177,7 +177,7 @@ const page = async ({ params }) => {
                             <p className='text-white font-bold text-center text-xl'>Get a Queue</p>
                         </div>
                     </div>
-
+                    <h3 className='my-10 text-3xl font-bold'>Price</h3>
                 </div>
 
             </div>
