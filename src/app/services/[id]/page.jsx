@@ -178,7 +178,7 @@ const page = async ({ params }) => {
                         </div>
                     </div>
                     <h3 className='my-10 text-3xl font-bold'>Price</h3>
-                    <button className='w-full bg-[] text-white text-xl font-bold'>Processed to Check</button>
+                    <button className='w-full bg-[#FF3811] text-white text-xl font-bold p-5 '>Processed to Check</button>
                 </div>
 
             </div>
