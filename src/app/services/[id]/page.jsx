@@ -48,7 +48,8 @@ const page = async ({ params }) => {
                                         1
                                     </p>
                                 </div>
-                                <h3 className='text-3xl text-black uppercase'>step one</h3>
+                                <h3 className='text-3xl text-black uppercase mt-3 lato'>step one</h3>
+                                <p className='mt-3 lato'>It uses a dictionary <br /> of over 200 .</p>
                             </div>
 
                         </div>
