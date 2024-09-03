@@ -167,13 +167,14 @@ const page = async ({ params }) => {
                     </div>
 
                     <div className='mt-10 bg-black text-white rounded-lg w-[100%] mx-auto'>
-                        <Image className='w-[100%]' src='/assets/logo.svg' alt='logo' height={100} width={200} />
-                        <p className='text-xl font-bold'>Need Help <br /> We are Here</p>
-                        <div className='w-[80%] bg-white text-black rounded-lg'>
-                            <p className='text-xl font-bold'> <span className='text-[#FF3811]'> Car Doctor</span>Special </p>
+                        <Image className='w-[30%] mx-auto pt-5 text-white' src='/assets/logo.svg' alt='logo' height={100} width={200} />
+                        <p className='text-xl font-bold text-center mx-auto mt-8'>Need Help <br /> We are Here</p>
+                        <div className='text-center mt-8 w-[80%] bg-white text-black rounded-lg mx-auto p-5 pb-10'>
+                            <p className='text-xl font-bold'> <span className='text-[#FF3811]'> Car Doctor </span>Special </p>
+                            <p className='font-bold mt-3'> Save up to <span className='text-[#FF3811]'>60% off</span></p>
                         </div>
-                        <div className='relative bottom-5 bg-[#FF3811] w-[50%] text-white '>
-                            <p className='text-white font-bold'>Get a Queue</p>
+                        <div className='mx-auto relative bottom-7 rounded-lg bg-[#FF3811] w-[50%] text-white py-4'>
+                            <p className='text-white font-bold text-center text-xl'>Get a Queue</p>
                         </div>
                     </div>
 
