@@ -8,30 +8,34 @@ import { FaArrowRight } from "react-icons/fa6";
 const page = async ({ params }) => {
     const serviceDetails = await getServiceDetails(params.id);
     // console.log(serviceDetails);
-    // const {img, price, title, description, facility} = serviceDetails.service
+    const { img, title, description, facility, price } = serviceDetails;
     return (
         <section>
             <div>
-                <div className='gradientBackground rounded-lg'>
-                    <Image className='' src='/details.png' alt='image' height={100} width={1137} />
+                <div className=' rounded-lg'>
+                    <Image className='w-[100%] h-[300px] rounded-lg' src={img} alt='image' height={10} width={1320} />
                 </div>
                 <h2 className='relative bottom-44 left-28 lato text-5xl font-bold text-white'>Service Details</h2>
                 <div className='bg-[#FF3811] bg-area max-w-[330px] h-[200px] relative bottom-[248px] mx-auto flex items-end justify-center'>
                     <h4 className='text-xl font-bold text-white px-2 py-1 lato'>Home/Service Details</h4>
                 </div>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 -mt-20'>
                 <div className='col-span-2'>
                     <Image className='w-[100%]' src='/carDetails.png' alt='image' height={400} width={852} />
                     <div className='mt-5'>
-                        <h3 className='text-black lato text-2xl font-bold'>UniQue</h3>
-                        <p>Description</p>
+                        <h3 className='text-black lato text-2xl font-bold'>{title}</h3>
+                        <p> {description} </p>
                     </div>
                     <div className='mt-5 grid grid-cols-2 gap-4'>
-                        <div className='bg-[#F3F3F3] text-[#737373] lato p-5 border-4 rounded-xl border-t-red-500'>
-                            <h3 className='text-2xl font-bold text-black'>Title</h3>
-                            <p>Descroption</p>
-                        </div>
+                        {
+                            facility.map((item, index) => (
+                                <div key={index} className='bg-[#F3F3F3] text-[#737373] lato p-5 border-t-4 rounded-xl border-t-red-500'>
+                                    <h3 className='text-2xl font-bold text-black '> {item.name} </h3>
+                                    <p className='mt-3'> {item.details} </p>
+                                </div>
+                            ))
+                        }
 
                     </div>
                     <div className='mt-5 lato'>
@@ -177,8 +181,8 @@ const page = async ({ params }) => {
                             <p className='text-white font-bold text-center text-xl'>Get a Queue</p>
                         </div>
                     </div>
-                    <h3 className='my-10 text-3xl font-bold'>Price</h3>
-                    <button className='w-full bg-[#FF3811] text-white text-xl font-bold p-5 '>Processed to Check</button>
+                    <h3 className='my-10 text-3xl font-bold text-black'>Price: ${price}</h3>
+                    <button className='w-full bg-[#FF3811] rounded-lg text-white text-2xl font-bold p-5 '>Processed to Check</button>
                 </div>
 
             </div>

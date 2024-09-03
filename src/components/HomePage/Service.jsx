@@ -3,11 +3,10 @@ import React from 'react';
 import ServiceCard from '../Cards/ServiceCard';
 import { getService } from '@/Services/getServices';
 
-
-
 const Service = async () => {
     const services = await getService();
-    console.log(services)
+    console.log(services);
+    
     return (
         <section className='mt-20'>
             <div className='w-full mx-auto'>
