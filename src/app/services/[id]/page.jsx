@@ -94,7 +94,12 @@ const page = async ({ params }) => {
                     </div>
 
                 </div>
-                <div>
+                <div className='lato'>
+                    <div className='mx-4 py-5 bg-[#F3F3F3]'>
+                        <h4 className='text-2xl font-bold text-black'>Service</h4>
+
+
+                    </div>
 
                 </div>
 
