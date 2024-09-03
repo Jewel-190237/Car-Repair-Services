@@ -42,12 +42,13 @@ const page = async ({ params }) => {
                     </div>
                     <div className='lato mt-10 flex justify-between'>
                         <div className='flex flex-col items-center'>
-                            <div className='border'>
-                                <div className='border-[15px] border-[#FF38111A] rounded-full'>
-                                    <p className='rounded-full bg-[#FF3811] text-white text-2xl px-5 py-3'>
+                            <div className='border p-5'>
+                                <div className='border-[15px] border-[#FF38111A] rounded-full '>
+                                    <p className='rounded-full bg-[#FF3811] text-white text-2xl px-6 py-3'>
                                         1
                                     </p>
                                 </div>
+                                
                             </div>
 
                         </div>
