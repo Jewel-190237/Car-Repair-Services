@@ -5,7 +5,7 @@ import { getService } from '@/Services/getServices';
 
 const Service = async () => {
     const services = await getService();
-    console.log(services);
+    // console.log(services);
     
     return (
         <section className='mt-20'>
