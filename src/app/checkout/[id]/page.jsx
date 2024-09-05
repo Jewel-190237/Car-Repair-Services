@@ -1,9 +1,11 @@
 'use client'
 import { getServiceDetails } from '@/Services/getServices';
-import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 
 const CheckoutPage = ({ params }) => {
+
+    const {data} = useSession();
     const [service, setService] = useState({});
     const loadService = async () => {
         const details = await getServiceDetails(params.id)
@@ -43,6 +45,7 @@ const CheckoutPage = ({ params }) => {
                         <input
                             type="text"
                             name="fname"
+                            defaultValue={data?.user?.name?.split(' ')[0]}
                             placeholder="First Name"
                             className="mt-3 w-full lato bg-white border border-[#FF3811] p-3 rounded-lg"
                         />
@@ -50,6 +53,7 @@ const CheckoutPage = ({ params }) => {
                         <input
                             type="text"
                             name="lname"
+                            defaultValue={data?.user?.name?.split(' ')[1]}
                             placeholder="Last Name"
                             className="w-full mt-3 lato bg-white border border-[#FF3811] p-3 rounded-lg"
                         />
@@ -60,6 +64,7 @@ const CheckoutPage = ({ params }) => {
                             type="email"
                             name="email"
                             placeholder="Email"
+                            defaultValue={data?.user?.email}
                             className="lato mt-3 w-full bg-white border border-[#FF3811] p-3 rounded-lg"
                         />
 
