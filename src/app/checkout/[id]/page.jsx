@@ -1,6 +1,12 @@
-import React from 'react';
+import { getServiceDetails } from '@/Services/getServices';
+import React, { useState } from 'react';
 
-const page = () => {
+const CheckoutPage = ({params}) => {
+    const [service, setService] = useState({});
+    const loadService = async() => {
+        const serviceDetails = await getServiceDetails(params.id)
+        setService(serviceDetails)
+    }
     return (
         <div>
             
@@ -9,4 +15,4 @@ const page = () => {
 };
 
 
-export default page;
+export default CheckoutPage;
