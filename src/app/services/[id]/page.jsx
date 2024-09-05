@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const page = async ({ params }) => {
     const serviceDetails = await getServiceDetails(params.id);
-    // console.log(serviceDetails);
+    console.log(serviceDetails);
     const { _id, img, title, description, facility, price } = serviceDetails;
     return (
         <section>
