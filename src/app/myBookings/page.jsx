@@ -1,5 +1,8 @@
+'use client'
 import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
+import { FaEdit } from 'react-icons/fa';
+import { FaDeleteLeft } from 'react-icons/fa6';
 
 const MyBookings = () => {
     const { data } = useSession();
@@ -15,6 +18,8 @@ const MyBookings = () => {
     useEffect(() => {
         loadData()
     }, [data])
+
+
     return (
         <section>
             <div>
@@ -36,20 +41,34 @@ const MyBookings = () => {
                     <table className="table">
                         {/* head */}
                         <thead className='text-2xl font-bold text-black'>
-                            <tr className='font-bold text-black'>
-                                <th>Sl</th>
+                            <tr className='font-bold text-black text-xl'>
+
                                 <th>Name</th>
-                                <th>Job</th>
-                                <th>Favorite Color</th>
+                                <th>Title</th>
+                                <th>Date</th>
+                                <th>Price</th>
+                                <th>phone</th>
+                                <th className='text-center'>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr >
-                                <th>1</th>
-                                <td>Hart Hagerty</td>
-                                <td>Desktop Support Technician</td>
-                                <td>Purple</td>
-                            </tr>
+                            {
+                                bookings.map(({ _id, index, title, date, prise, phone, name }) => (
+                                    <tr className='font-bold text-black ' key={index} >
+
+                                        <td>{name}</td>
+                                        <td>{title}</td>
+                                        <td>{date}</td>
+                                        <td>{prise}</td>
+                                        <td>{phone}</td>
+                                        <td className='flex justify-between text-xl'>
+                                            <button><FaEdit></FaEdit></button>
+                                            <button><FaEdit></FaEdit></button>
+                                        </td>
+
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
                 </div>
