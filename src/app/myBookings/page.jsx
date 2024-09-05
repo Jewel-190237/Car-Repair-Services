@@ -1,6 +1,9 @@
+import { useSession } from 'next-auth/react';
 import React from 'react';
 
 const MyBookings = () => {
+    const { data } = useSession();
+    
     return (
         <section>
             <div>
@@ -15,6 +18,29 @@ const MyBookings = () => {
                 </div>
                 <div className='bg-[#FF3811] bg-area max-w-[330px] h-[200px] relative bottom-[200px] mx-auto flex items-end justify-center'>
                     <h4 className='text-xl font-bold text-white px-2 py-1 lato'>Home/MyBookings</h4>
+                </div>
+            </div>
+            <div className='-mt-40 mb-20 lato text-black'>
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        {/* head */}
+                        <thead className='text-2xl font-bold text-black'>
+                            <tr className='font-bold text-black'>
+                                <th>Sl</th>
+                                <th>Name</th>
+                                <th>Job</th>
+                                <th>Favorite Color</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr >
+                                <th>1</th>
+                                <td>Hart Hagerty</td>
+                                <td>Desktop Support Technician</td>
+                                <td>Purple</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
