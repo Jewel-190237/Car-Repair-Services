@@ -8,12 +8,12 @@ import { FaArrowRight } from "react-icons/fa6";
 const page = async ({ params }) => {
     const serviceDetails = await getServiceDetails(params.id);
     // console.log(serviceDetails);
-    const { img, title, description, facility, price } = serviceDetails;
+    const { _id, img, title, description, facility, price } = serviceDetails;
     return (
         <section>
             <div>
                 <div className=' rounded-lg'>
-                    <Image className='w-[100%] h-[300px] rounded-lg' src={img} alt='image' height={10} width={1320} />
+                    <Image className='w-[100%] h-[300px] rounded-lg' src='/banner.png' alt='image' height={10} width={1320} />
                 </div>
                 <h2 className='relative bottom-44 left-28 lato text-5xl font-bold text-white'>Service Details</h2>
                 <div className='bg-[#FF3811] bg-area max-w-[330px] h-[200px] relative bottom-[248px] mx-auto flex items-end justify-center'>
@@ -22,7 +22,7 @@ const page = async ({ params }) => {
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 -mt-20'>
                 <div className='col-span-2'>
-                    <Image className='w-[100%]' src='/carDetails.png' alt='image' height={400} width={852} />
+                    <Image className='w-[100%] h-[20%] rounded-lg' src={img} alt='image' height={100} width={852} />
                     <div className='mt-5'>
                         <h3 className='text-black lato text-2xl font-bold'>{title}</h3>
                         <p> {description} </p>
@@ -182,7 +182,9 @@ const page = async ({ params }) => {
                         </div>
                     </div>
                     <h3 className='my-10 text-3xl font-bold text-black'>Price: ${price}</h3>
-                    <button className='w-full bg-[#FF3811] rounded-lg text-white text-2xl font-bold p-5 '>Processed to Check</button>
+                    <Link href={`/checkout/${_id}`}>
+                        <button className='w-full bg-[#FF3811] rounded-lg text-white text-2xl font-bold p-5' >Processed to Check</button>
+                    </Link>
                 </div>
 
             </div>
