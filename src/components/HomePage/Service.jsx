@@ -18,8 +18,8 @@ const Service = async () => {
             </div>
             <div className='mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
-                    services?.map((service) => (
-                        <ServiceCard service={service} key={service.id}></ServiceCard>
+                    services?.map((index, service) => (
+                        <ServiceCard service={service} key={index}></ServiceCard>
                     ))
                 }
             </div>
