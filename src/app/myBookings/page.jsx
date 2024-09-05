@@ -1,9 +1,20 @@
 import { useSession } from 'next-auth/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const MyBookings = () => {
     const { data } = useSession();
-    
+
+    const [bookings, setBookings] = useState([])
+
+    const loadData = async () => {
+        const resp = await fetch(`http://localhost:3000/myBookings/api/${data?.user?.email}`)
+        const book = await resp.json();
+        setBookings(book)
+    }
+
+    useEffect(() => {
+        loadData()
+    }, [data])
     return (
         <section>
             <div>
