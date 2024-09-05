@@ -5,17 +5,36 @@ import React, { useEffect, useState } from 'react';
 
 const CheckoutPage = ({ params }) => {
 
-    const {data} = useSession();
+    const { data } = useSession();
     const [service, setService] = useState({});
     const loadService = async () => {
         const details = await getServiceDetails(params.id)
         setService(details)
     }
     // console.log(service)
-    const { _id, img, price, description } = service || {};
+    const { _id, img, price, title } = service || {};
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
+        const newBooking = {
+            name: data?.user?.name,
+            email: data?.user?.email,
+            address: event.target.address.value,
+            phone: event.target.phone.value,
+            date: event.target.date.value,
+            prise: price,
+            title: title,
+            id: _id
+        }
+
+        const resp = await fetch('http://localhost:3000/checkout/api/newBooking', {
+            method: 'POST',
+            body: JSON.stringify(newBooking),
+            headers: {
+                'content-type': "application/json"
+            }
+        })
+        console.log(resp)
     }
 
     useEffect(() => {
@@ -77,12 +96,28 @@ const CheckoutPage = ({ params }) => {
                         />
 
                     </div>
-                    <input
-                            type="text"
-                            name="message"
-                            placeholder="Write Your Message"
-                            className="lato mt-10 w-full h-32 bg-white border border-[#FF3811] p-3 rounded-lg"
+                    <div className='flex gap-5 mt-5'>
+                        <input
+                            type="date"
+                            name="date"
+                            placeholder="Date"
+                            className="lato mt-3 w-full bg-white border border-[#FF3811] p-3 rounded-lg"
                         />
+
+                        <input
+                            type="number"
+                            name="phone"
+                            placeholder="Phone Number"
+                            className="lato w-full mt-3 bg-white border border-[#FF3811] p-3 rounded-lg"
+                        />
+
+                    </div>
+                    <input
+                        type="text"
+                        name="address"
+                        placeholder="Write Your Address"
+                        className="lato mt-10 w-full h-32 bg-white border border-[#FF3811] p-3 rounded-lg"
+                    />
 
                     <button
                         type="submit" className='lato font-bold mt-10 rounded-lg w-full p-3 border border-[#FF3811] bg-[#FF3811] text-white'>
