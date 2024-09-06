@@ -2,7 +2,7 @@
 import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 import { FaEdit } from 'react-icons/fa';
-import { FaDeleteLeft } from 'react-icons/fa6';
+import { FaEraser } from 'react-icons/fa6';
 
 const MyBookings = () => {
     const { data } = useSession();
@@ -63,7 +63,7 @@ const MyBookings = () => {
                                         <td>{phone}</td>
                                         <td className='flex justify-between text-xl'>
                                             <button><FaEdit></FaEdit></button>
-                                            <button><FaEdit></FaEdit></button>
+                                            <button><FaEraser></FaEraser> </button>
                                         </td>
 
                                     </tr>
