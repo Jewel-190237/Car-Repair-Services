@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import About from "./About";
 import Service from "./Service";
 import ComonSlider from "./ComonSlider";
+import ThreeChangeSlider from "./ThreeChangeSlider";
 const HomePage = () => {
     return (
         <div>
@@ -10,7 +11,8 @@ const HomePage = () => {
             <About/>
             <Service/> */}
 
-            <ComonSlider/>
+            {/* <ComonSlider/> */}
+            <ThreeChangeSlider/>
         </div>
     )
 }
