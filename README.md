@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Car Repair Services - Car Doctor Platform
+
+A comprehensive car repair services platform built with Next.js, Ant Design, Tailwind CSS, MongoDB, and NextAuth. Features include service listings, appointment booking, and user authentication.
+
+## Features
+
+- Server-side rendering with Next.js
+- Responsive design for all devices
+- User authentication with NextAuth
+- MongoDB database integration
+- Service listings and booking
+- Ant Design components
+- Secure API endpoints
+- Fast loading and performance
+
+## Technologies Used
+
+- **Framework:** Next.js 14
+- **UI Library:** Ant Design
+- **Styling:** Tailwind CSS, DaisyUI
+- **Database:** MongoDB
+- **Authentication:** NextAuth.js
+- **Security:** bcrypt
+- **Icons:** Heroicons, React Icons
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Jewel-190237/Car-Repair-Services.git
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. Open the project folder:
+   ```bash
+   cd Car-Repair-Services
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Create a `.env.local` file with the following variables:
+   ```env
+   NEXTAUTH_SECRET=your_secret_key
+   NEXTAUTH_URL=http://localhost:3000
+   MONGODB_URI=your_mongodb_connection_string
+   ```
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+6. Open your browser and visit `http://localhost:3000`
+
+## Project Structure
+
+```
+Car-Repair-Services/
+├── app/
+│   ├── api/
+│   ├── page.js
+│   ├── layout.js
+│   └── globals.css
+├── public/
+├── package.json
+├── next.config.js
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features in Detail
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### User Authentication
+- Secure login and registration
+- NextAuth integration
+- Password hashing with bcrypt
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Service Management
+- Browse car repair services
+- View service details
+- Book appointments
 
-## Learn More
+### Database Integration
+- MongoDB for data storage
+- Efficient queries and caching
+- Secure data handling
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Author
 
-## Deploy on Vercel
+**Jewel-190237**
+- GitHub: [Jewel-190237](https://github.com/Jewel-190237)
+- Email: jewel190237@gmail.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to fork this project and create pull requests for any improvements.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
